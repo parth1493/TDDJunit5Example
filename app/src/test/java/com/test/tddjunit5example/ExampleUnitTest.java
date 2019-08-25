@@ -1,6 +1,7 @@
 package com.test.tddjunit5example;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -100,5 +101,40 @@ public class ExampleUnitTest {
         }
     }
 
+    @DisplayName("Test cases for Premium class")
+    @Nested
+    class PremiumFlightTest {
+        private Flight premiumFlight;
 
+        @BeforeEach
+        void setup() {
+            premiumFlight = new PremiumFlight("3");
+        }
+
+        @Test
+        void testPremiumFlightUsualPassenger() {
+
+            Passenger mike = new Passenger("Mike", false);
+
+            assertAll("These test cases are for business class and for usual passenger",
+                    () -> assertEquals(false, premiumFlight.addPassenger(mike)),
+                    () -> assertEquals(0, premiumFlight.getPassengerList().size()),
+                    () -> assertEquals(false, premiumFlight.removePassenger(mike)),
+                    () -> assertEquals(0, premiumFlight.getPassengerList().size()));
+
+        }
+
+        @Test
+        @Disabled
+        void testPremiumFlightVipPassenger() {
+            Passenger john = new Passenger("John", true);
+
+            assertAll("These test cases are for business class and for usual passenger",
+                    () -> assertEquals(true, premiumFlight.addPassenger(john)),
+                    () -> assertEquals(1, premiumFlight.getPassengerList().size()),
+                    () -> assertEquals(false, premiumFlight.removePassenger(john)),
+                    () -> assertEquals(1, premiumFlight.getPassengerList().size()));
+
+        }
+    }
 }
