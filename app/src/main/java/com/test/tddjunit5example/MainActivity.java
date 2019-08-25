@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
         economyFlight.removePassenger(mike);
 
         Log.v(TAG,"Business flight passengers list");
-        for(Passenger passenger:businessFlight.getPassengerList()) {
+        for(Passenger passenger:businessFlight.getPassengerSet()) {
             Log.v(TAG,passenger.getName());
         }
         Log.v(TAG,"Economy flight passengers list");
-        for(Passenger passenger:economyFlight.getPassengerList()) {
+        for(Passenger passenger:economyFlight.getPassengerSet()) {
             Log.v(TAG,passenger.getName());
         }
     }

@@ -2,12 +2,14 @@ package com.test.tddjunit5example;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class Flight {
 
     private String id;
-    List<Passenger> passengerList = new ArrayList<>();
+    Set<Passenger> passengerList = new HashSet<>();
 
 
     public Flight(String id) {
@@ -18,8 +20,8 @@ public abstract class Flight {
         return id;
     }
 
-    public List<Passenger> getPassengerList() {
-        return Collections.unmodifiableList(passengerList);
+    public Set<Passenger> getPassengerSet() {
+        return Collections.unmodifiableSet(passengerList);
     }
 
     public abstract boolean addPassenger(Passenger passenger);
