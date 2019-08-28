@@ -9,11 +9,21 @@ import java.util.Set;
 public abstract class Flight {
 
     private String id;
-    Set<Passenger> passengerList = new HashSet<>();
+    private int distance;
 
+    Set<Passenger> passengerList = new HashSet<>();
 
     public Flight(String id) {
         this.id = id;
+    }
+
+
+    public int getDistance() {
+        return distance;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
     }
 
     public String getId() {

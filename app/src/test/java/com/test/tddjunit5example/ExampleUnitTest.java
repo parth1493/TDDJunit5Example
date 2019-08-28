@@ -39,7 +39,7 @@ public class ExampleUnitTest {
             Passenger mike = new Passenger("Mike", false);
 
             assertAll("These test cases are for Economy class and for usual passenger",
-                    ()->assertEquals("1", economyFlight.getId()),
+                    ()-> assertEquals("1", economyFlight.getId()),
                     ()-> assertEquals(true, economyFlight.addPassenger(mike)),
                     ()-> assertEquals(1, economyFlight.getPassengerSet().size()),
                     ()-> assertTrue(economyFlight.getPassengerSet().contains(mike)),
