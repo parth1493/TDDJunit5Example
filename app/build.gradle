@@ -39,6 +39,7 @@ dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.3.2"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.3.2"
     testImplementation "org.junit.jupiter:junit-jupiter-params:5.3.2"
+    testImplementation "org.mockito:mockito-core:2.+"
 }
 //Steps to add JaCoCo a coverage result
 //Gradle already has built-in support for generating test coverage reports and we don't need to create any additional configurations or add any plugins to generate test coverage report. Basically, the only thing we need to do is to set testCoverageEnabled parameter to true in build.gradle file as follows:
